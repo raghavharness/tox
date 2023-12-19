@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_raghavharness_tox_1702961553565-push-trigger-input-set
+  identifier: Build_raghavharness_tox_1702961553565pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: autogen
+  pipeline:
+    identifier: Build_raghavharness_tox_1702961553565
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
