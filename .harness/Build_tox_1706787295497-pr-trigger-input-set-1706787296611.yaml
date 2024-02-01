@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_tox_1706787295497-pr-trigger-input-set
+  identifier: Build_tox_1706787295497prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  pipeline:
+    identifier: Build_tox_1706787295497
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
