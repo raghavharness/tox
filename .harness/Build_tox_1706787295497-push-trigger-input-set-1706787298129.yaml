@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_tox_1706787295497-push-trigger-input-set
+  identifier: Build_tox_1706787295497pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  pipeline:
+    identifier: Build_tox_1706787295497
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
