@@ -1,0 +1,56 @@
+pipeline:
+  identifier: Build_tox_1706787295497
+  name: Build tox
+  orgIdentifier: default
+  projectIdentifier: RaghavTest
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.CItestGitConnectorc515lGxa7g
+        repoName: tox
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: runlinter
+                  name: run linter
+                  spec:
+                    command: |-
+                      pip install flake8
+                      flake8 .
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: installdependencies
+                  name: install dependencies
+                  spec:
+                    command: pip install tox
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: runtests
+                  name: run tests
+                  spec:
+                    command: tox
+                  timeout: ""
+                  type: Run
+              - step:
+                  identifier: getcoverage
+                  name: get coverage
+                  spec:
+                    command: tox -e coverage
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
